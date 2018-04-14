@@ -12,20 +12,15 @@ shutdown() {
 trap shutdown SIGTERM SIGINT
 
 # Need $DEVPI_SERVERDIR
-devpi-server --start --init --host 0.0.0.0 --port $DEVPI_PORT --serverdir $DEVPI_SERVERDIR
-
 DEVPI_LOGS=$DEVPI_SERVERDIR/.xproc/devpi-server/xprocess.log
 
-#devpi use http://localhost:$DEVPI_PORT
-#if [[ $initialize = yes ]]; then
-  #echo Hello World
-  # Set root password
-  #devpi login root --password=''
-  #devpi user -m root password="${DEVPI_PASSWORD}"
-  # devpi index -y -c public pypi_whitelist='*'
-#fi
-# Authenticate for later commands
-#devpi login root --password="${DEVPI_PASSWORD}"
+if [[ $initialize = yes ]]; then
+devpi-server --start --init --host 0.0.0.0 --port $DEVPI_PORT --serverdir $DEVPI_SERVERDIR
+else
+devpi-server --start --host 0.0.0.0 --port $DEVPI_PORT --serverdir $DEVPI_SERVERDIR
+	
+fi
+
 
 tail -f $DEVPI_LOGS &
 TAIL_PID=$!
