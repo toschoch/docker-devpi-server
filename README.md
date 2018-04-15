@@ -3,21 +3,21 @@
 
 # Devpi Server Alpine Docker image
 
-A Docker image based on [Alpine](https://hub.docker.com/_/alpine/) that runs
-a [devpi](http://doc.devpi.net) server (*a PyPi Cache*) with a frontend (devpi-web).
+A Docker image based on [Alpine](https://hub.docker.com/_/alpine/) and as a fork of [Apihackers DevPi](https://hub.docker.com/r/apihackers/devpi/) that runs
+a [devpi](http://doc.devpi.net) server (*a PyPi Cache*) with a frontend (devpi-web, devpi-theme-16).
 
 ## Usage
 
-The `$DEVPI_PASSWORD` environment variable will set the root password on first run.
+The user root with empty password is added after starting the server. Please add a user and change the root password right away.
 
 ```bash
-docker run -e "DEVPI_PASSWORD=password" -d -p 3141:3141 --name devpi apihackers/devpi
+docker run -d -p 3141:3141 --name devpi-server shocki/devpi-server
 ```
 
 To mount your own local devpi cache directory:
 
 ```bash
-docker run -d -v /path/to/devpi/home:/devpi apihackers/devpi
+docker run -d -v /path/to/devpi/home:/devpi shocki/devpi-server
 ```
 ### pip
 
