@@ -1,5 +1,5 @@
-[![Docker Stars](https://img.shields.io/docker/stars/apihackers/devpi.svg?style=flat-square)](https://hub.docker.com/r/apihackers/devpi/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/apihackers/devpi.svg?style=flat-square)](https://hub.docker.com/r/apihackers/devpi/)
+[![Docker Stars](https://img.shields.io/docker/stars/shocki/devpi-server.svg?style=flat-square)](https://hub.docker.com/r/shocki/devpi-server/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/shocki/devpi-server.svg?style=flat-square)](https://hub.docker.com/r/shocki/devpi-server/)
 
 # Devpi Server Alpine Docker image
 
